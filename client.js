@@ -14,9 +14,10 @@ const fileServer = (loc) => {
       if (err) {
         console.log(err.message);
       } else {
-        console.log(data);
+        console.log(`Your requested file contains the following data: \n${data}`);
       }
       conn.end();
+      console.log('Disconnected from the server.');
     });
   });
 };
