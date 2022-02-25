@@ -11,9 +11,10 @@ conn.on('connect',function(){
   console.log('Connected to the server.');
   fs.readFile('./data.txt', 'utf8', function(err, data){
     if (err) {
-      return console.log(err);
+      console.log(err.message);
+    } else {
+      console.log(data);
     }
-    console.log(data);
     conn.end();
   });
 });
