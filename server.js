@@ -1,20 +1,7 @@
-const fs = require('fs');
 const net = require('net');
 
-const conn = net.createConnection({ 
-  host: 'localhost',
-  port: 80
+const server = net.createServer();
+
+server.listen(3000, () => {
+  console.log('Server listening on port 3000!');
 });
-conn.setEncoding('UTF8'); // interpret data as text
-
-conn.on('connect',function(){
-  console.log('client is connected to server.');
-  });
-  
-conn.on('data', function(message){ // this is how we receive
-  console.log(`File says: ${message}`);
-  });
-
-conn.on('end', function(){
-  console.log('Disconnected from the server.');
-  }); 
