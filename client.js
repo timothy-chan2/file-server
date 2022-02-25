@@ -14,9 +14,6 @@ conn.on('connect',function(){
       return console.log(err);
     }
     console.log(data);
+    conn.end();
   });
 });
-
-conn.on('end', function(){
-  console.log('Disconnected from the server.');
-}); 
