@@ -7,9 +7,9 @@ const conn = net.createConnection({
 });
 conn.setEncoding('utf8'); // interpret data as text
 
-conn.on('connect',function(){
+conn.on('connect',() => {
   console.log('Connected to the server.');
-  fs.readFile('./data.txt', 'utf8', function(err, data){
+  fs.readFile('./data.txt', 'utf8', (err, data) => {
     if (err) {
       console.log(err.message);
     } else {
